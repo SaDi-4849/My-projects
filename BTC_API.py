@@ -2,7 +2,6 @@ import requests
 import webbrowser
 from datetime import datetime, date, timedelta
 import json
-from kavenegar import *
 
 url = 'https://api.nasa.gov/planetary/apod'
 api_key = "JZXjKYRMZjYbUs4nbmcTa2g73eUcuqO17UDsgfvB"
@@ -72,26 +71,3 @@ except Exception as e:
 
 
 
-#api_key_for_sms = "547736467A5254506A362B2B784A4F716571537976553466716C6C514E5862457632476F473555636479633D"
-#url = 'https://api.kavenegar.com/v1/%s/sms/send.json' %api_key_for_sms
-def send_sms():
-    api = KavenegarAPI('6730375568314B4D3549315061422B5A7A794F59366E413264413353523238597134574E5947624D7544493D')
-    params = { 'sender' : '2000660110', 'receptor':'09333406383', 
-    'message' :f'Title: {title}'
-    '------------------------------------------'
-    f'Image URL: {image_url}'
-       }
-    response = api.sms_send(params)
-    print(response)
-
-#while True:
-    #try:
-        #choice = input("SMS y or n : ")
-        #if choice == 'y':
-            #send_sms()
-            #break
-        #else:
-            #break
-
-    #except Exception as e :
-        #print(f"Error: {e}")
